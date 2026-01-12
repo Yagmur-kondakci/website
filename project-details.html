@@ -1,203 +1,518 @@
-# website
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>IE421 Project</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body class="home">
-
-  <!-- NAVIGATION -->
-  <div class="top-nav">
-    <a href="project-details.html">Project Details</a>
-    <a href="visualizations.html">Visualizations</a>
-  </div>
-
-  <!-- TITLE -->
-  <div class="hero-title">IE421 Project</div>
-
-  <!-- LONG BOI -->
-  <div class="longboi-track">
-    <div class="longboi">🦆</div>
-  </div>
-
-  <!-- TEAM -->
-  <div class="team">
-    <span>Meryem Öncü</span>
-    <span>Ahmed Efe Koluaçık</span>
-    <span>Beyza Altınköprü</span>
-    <span>Yağmur Kondakcı</span>
-    <span>Öykü Akdoğan</span>
-  </div>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Project Details</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IE421 Project - Home</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="nav-top-right">
+        <a href="project-details.html" class="nav-btn">Project Details</a>
+        <a href="visualizations.html" class="nav-btn">Visualizations</a>
+    </nav>
 
-  <div class="top-nav">
-    <a href="index.html">Home</a>
-    <a href="project-details.html">Project Details</a>
-    <a href="visualizations.html">Visualizations</a>
-  </div>
+    <!-- Background Image Container -->
+    <!-- TODO: Replace 'nyc-background.jpg' with your actual NYC background image -->
+    <div class="background-container">
+        <img src="nyc-background.jpg" alt="New York City Background" class="background-image" id="backgroundImage">
+    </div>
 
-  <main class="container">
-    <div class="card">Project Motivation</div>
-    <div class="card">Research Questions</div>
-    <div class="card">Datasets</div>
-    <div class="card">Methodology</div>
-  </main>
+    <!-- Animated Character: Long Boi -->
+    <!-- TODO: Replace with actual Long Boi character image/SVG when available -->
+    <div class="character-container">
+        <div class="character" id="longBoi">
+            <svg width="100" height="150" viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+                <!-- Placeholder SVG for Long Boi character -->
+                <rect x="30" y="20" width="40" height="60" fill="#4a90e2" rx="5"/>
+                <circle cx="50" cy="30" r="15" fill="#2c5aa0"/>
+                <ellipse cx="50" cy="100" rx="25" ry="35" fill="#4a90e2"/>
+                <line x1="20" y1="50" x2="10" y2="70" stroke="#2c5aa0" stroke-width="3"/>
+                <line x1="80" y1="50" x2="90" y2="70" stroke="#2c5aa0" stroke-width="3"/>
+            </svg>
+        </div>
+    </div>
 
+    <!-- Main Content -->
+    <main class="home-content">
+        <h1 class="main-title">IE421 Project</h1>
+    </main>
+
+    <!-- Team Members -->
+    <section class="team-section">
+        <div class="team-member">Meryem Öncü</div>
+        <div class="team-member">Ahmed Efe Koluaçık</div>
+        <div class="team-member">Beyza Altınköprü</div>
+        <div class="team-member">Yağmur Kondakcı</div>
+        <div class="team-member">Öykü Akdoğan</div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Visualizations</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IE421 Project - Project Details</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="nav-top-right">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="project-details.html" class="nav-btn">Project Details</a>
+        <a href="visualizations.html" class="nav-btn">Visualizations</a>
+    </nav>
 
-  <div class="top-nav">
-    <a href="index.html">Home</a>
-    <a href="project-details.html">Project Details</a>
-    <a href="visualizations.html">Visualizations</a>
-  </div>
+    <!-- Main Content -->
+    <main class="project-details-container">
+        <!-- Project Motivation Section -->
+        <!-- TODO: Add your project motivation content here -->
+        <section class="content-section">
+            <h2 class="section-title">Project Motivation</h2>
+            <div class="section-content">
+                <!-- Content placeholder - add your text here -->
+            </div>
+        </section>
 
-  <main class="container">
-    <div class="viz-block">
-      <div class="viz-chart">Daily Rhythm Visualizations</div>
-      <div class="viz-text"></div>
-    </div>
+        <!-- Research Questions Section -->
+        <!-- TODO: Add your research questions content here -->
+        <section class="content-section">
+            <h2 class="section-title">Research Questions</h2>
+            <div class="section-content">
+                <!-- Content placeholder - add your text here -->
+            </div>
+        </section>
 
-    <div class="viz-block">
-      <div class="viz-chart">Transportation & Mobility</div>
-      <div class="viz-text"></div>
-    </div>
+        <!-- Datasets Section -->
+        <!-- TODO: Add your datasets information here -->
+        <section class="content-section">
+            <h2 class="section-title">Datasets</h2>
+            <div class="section-content">
+                <!-- Content placeholder - add your text here -->
+            </div>
+        </section>
 
-    <div class="viz-block">
-      <div class="viz-chart">Noise & Social Activity</div>
-      <div class="viz-text"></div>
-    </div>
+        <!-- Methodology Section -->
+        <!-- TODO: Add your methodology content here -->
+        <section class="content-section">
+            <h2 class="section-title">Methodology</h2>
+            <div class="section-content">
+                <!-- Content placeholder - add your text here -->
+            </div>
+        </section>
+    </main>
 
-    <div class="viz-block">
-      <div class="viz-chart">Hot & Cold Zones</div>
-      <div class="viz-text"></div>
-    </div>
-  </main>
-
+    <script src="script.js"></script>
 </body>
 </html>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IE421 Project - Visualizations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-top-right">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="project-details.html" class="nav-btn">Project Details</a>
+        <a href="visualizations.html" class="nav-btn">Visualizations</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="visualizations-container">
+        <!-- Daily Rhythm Visualizations -->
+        <!-- TODO: Insert your Daily Rhythm chart here -->
+        <section class="viz-block">
+            <h2 class="viz-title">Daily Rhythm Visualizations</h2>
+            <div class="viz-chart-area">
+                <!-- Chart placeholder - insert your chart here -->
+            </div>
+            <div class="viz-explanation-area">
+                <!-- Explanation placeholder - add your explanation text here -->
+            </div>
+        </section>
+
+        <!-- Transportation & Mobility -->
+        <!-- TODO: Insert your Transportation & Mobility chart here -->
+        <section class="viz-block">
+            <h2 class="viz-title">Transportation & Mobility</h2>
+            <div class="viz-chart-area">
+                <!-- Chart placeholder - insert your chart here -->
+            </div>
+            <div class="viz-explanation-area">
+                <!-- Explanation placeholder - add your explanation text here -->
+            </div>
+        </section>
+
+        <!-- Noise & Social Activity -->
+        <!-- TODO: Insert your Noise & Social Activity chart here -->
+        <section class="viz-block">
+            <h2 class="viz-title">Noise & Social Activity</h2>
+            <div class="viz-chart-area">
+                <!-- Chart placeholder - insert your chart here -->
+            </div>
+            <div class="viz-explanation-area">
+                <!-- Explanation placeholder - add your explanation text here -->
+            </div>
+        </section>
+
+        <!-- Hot & Cold Zones -->
+        <!-- TODO: Insert your Hot & Cold Zones chart here -->
+        <section class="viz-block">
+            <h2 class="viz-title">Hot & Cold Zones</h2>
+            <div class="viz-chart-area">
+                <!-- Chart placeholder - insert your chart here -->
+            </div>
+            <div class="viz-explanation-area">
+                <!-- Explanation placeholder - add your explanation text here -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background: black;
-  color: white;
-  min-height: 100vh;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-/* HOME BACKGROUND */
-body.home {
-  background: url("nyc-placeholder.jpg") center/cover no-repeat;
+/* ============================================
+   NAVIGATION
+   ============================================ */
+
+.nav-top-right {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    z-index: 1000;
+    display: flex;
+    gap: 15px;
 }
 
-/* NAV */
-.top-nav {
-  position: fixed;
-  top: 20px;
-  right: 30px;
-  display: flex;
-  gap: 20px;
-  z-index: 10;
+.nav-btn {
+    padding: 12px 24px;
+    background-color: #1a237e;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid #283593;
 }
 
-.top-nav a {
-  color: white;
-  text-decoration: none;
-  padding: 8px 16px;
-  border: 1px solid #0b1c2d;
-  background: rgba(11, 28, 45, 0.85);
+.nav-btn:hover {
+    background-color: #283593;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(26, 35, 126, 0.4);
 }
 
-/* TITLE */
-.hero-title {
-  position: absolute;
-  top: 35%;
-  width: 100%;
-  text-align: center;
-  font-size: 4rem;
-  letter-spacing: 2px;
-  font-weight: 600;
+.nav-btn:active {
+    transform: translateY(0);
 }
 
-/* LONG BOI */
-.longboi-track {
-  position: absolute;
-  bottom: 80px;
-  width: 100%;
-  overflow: hidden;
+/* ============================================
+   HOME PAGE STYLES
+   ============================================ */
+
+/* Background Image Container */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
 }
 
-.longboi {
-  font-size: 5rem;
-  animation: walk 12s linear infinite;
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
 }
 
-@keyframes walk {
-  from { transform: translateX(-10%); }
-  to { transform: translateX(110%); }
+/* Fallback if image doesn't load */
+.background-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #000000 0%, #1a1a2e 100%);
+    z-index: -1;
 }
 
-/* TEAM */
-.team {
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  display: flex;
-  gap: 15px;
-  font-size: 0.85rem;
-  opacity: 0.85;
+/* Animated Character: Long Boi */
+.character-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    overflow: hidden;
 }
 
-/* CONTENT */
-.container {
-  padding: 120px 10%;
-  display: grid;
-  gap: 30px;
+.character {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    animation: moveLongBoi 20s linear infinite;
 }
 
-.card,
+@keyframes moveLongBoi {
+    0% {
+        left: -150px;
+    }
+    100% {
+        left: calc(100% + 150px);
+    }
+}
+
+.character svg {
+    width: auto;
+    height: 100%;
+    max-height: 300px;
+}
+
+/* Main Title */
+.home-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.main-title {
+    font-size: 72px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    letter-spacing: 2px;
+}
+
+/* Team Members Section */
+.team-section {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 3;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 600px;
+}
+
+.team-member {
+    padding: 10px 18px;
+    background-color: #1a237e;
+    color: #ffffff;
+    border-radius: 4px;
+    font-size: 14px;
+    border: 1px solid #283593;
+    transition: all 0.3s ease;
+}
+
+.team-member:hover {
+    background-color: #283593;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(26, 35, 126, 0.4);
+}
+
+/* ============================================
+   PROJECT DETAILS PAGE STYLES
+   ============================================ */
+
+.project-details-container {
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 40px 30px;
+}
+
+.content-section {
+    background-color: #1a237e;
+    border: 1px solid #283593;
+    border-radius: 8px;
+    padding: 40px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.content-section:hover {
+    box-shadow: 0 4px 12px rgba(26, 35, 126, 0.3);
+    transform: translateY(-2px);
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #283593;
+}
+
+.section-content {
+    min-height: 100px;
+    color: #e0e0e0;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* ============================================
+   VISUALIZATIONS PAGE STYLES
+   ============================================ */
+
+.visualizations-container {
+    max-width: 1400px;
+    margin: 100px auto;
+    padding: 40px 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
 .viz-block {
-  background: #0b1c2d;
-  border: 1px solid #142d44;
-  padding: 40px;
-  min-height: 120px;
+    background-color: #1a237e;
+    border: 1px solid #283593;
+    border-radius: 8px;
+    padding: 40px;
+    transition: all 0.3s ease;
 }
 
-/* VISUALIZATION BLOCK */
-.viz-chart {
-  height: 200px;
-  border: 1px dashed #355a7a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
+.viz-block:hover {
+    box-shadow: 0 4px 12px rgba(26, 35, 126, 0.3);
+    transform: translateY(-2px);
 }
 
-.viz-text {
-  height: 100px;
-  border: 1px dashed #355a7a;
+.viz-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #283593;
+}
+
+.viz-chart-area {
+    min-height: 400px;
+    background-color: #0d1442;
+    border: 1px dashed #283593;
+    border-radius: 4px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.viz-chart-area::before {
+    content: 'Chart Placeholder';
+    color: #5c6bc0;
+    font-size: 18px;
+    opacity: 0.5;
+}
+
+.viz-explanation-area {
+    min-height: 120px;
+    background-color: #0d1442;
+    border: 1px dashed #283593;
+    border-radius: 4px;
+    padding: 20px;
+    color: #b0bec5;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 48px;
+    }
+
+    .nav-top-right {
+        top: 15px;
+        right: 15px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-btn {
+        padding: 10px 18px;
+        font-size: 12px;
+    }
+
+    .team-section {
+        bottom: 15px;
+        right: 15px;
+        gap: 10px;
+        max-width: calc(100% - 30px);
+    }
+
+    .team-member {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+
+    .project-details-container,
+    .visualizations-container {
+        margin: 80px auto;
+        padding: 20px 15px;
+    }
+
+    .content-section,
+    .viz-block {
+        padding: 25px 20px;
+    }
+
+    .section-title,
+    .viz-title {
+        font-size: 24px;
+    }
+
+    .viz-chart-area {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 36px;
+    }
+
+    .character svg {
+        max-height: 200px;
+    }
 }
