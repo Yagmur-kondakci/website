@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>IE421 Project – Home</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IE421 Project - Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="home-page">
@@ -11,25 +11,16 @@
 
     <!-- Long Boi animation container -->
     <div class="long-boi-track">
-        <!-- Neutral placeholder SVG for "Long Boi" (tall duck-like character) -->
-        <!-- This SVG can be replaced or customized as needed. -->
         <svg class="long-boi" viewBox="0 0 60 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <!-- Body -->
             <rect x="20" y="60" width="20" height="190" rx="10" ry="10" fill="#f9f9f9" />
-            <!-- Head -->
             <circle cx="30" cy="40" r="18" fill="#f9f9f9" />
-            <!-- Beak -->
             <polygon points="38,38 58,44 38,50" fill="#f5c46b" />
-            <!-- Eye -->
             <circle cx="25" cy="35" r="3" fill="#000000" />
-            <!-- Foot (left) -->
             <rect x="16" y="250" width="14" height="8" fill="#f5c46b" />
-            <!-- Foot (right) -->
             <rect x="30" y="250" width="14" height="8" fill="#f5c46b" />
         </svg>
     </div>
 
-    <!-- Top navigation -->
     <header class="top-nav">
         <nav class="nav-links">
             <a href="project-details.html" class="nav-button">Project Details</a>
@@ -37,12 +28,10 @@
         </nav>
     </header>
 
-    <!-- Centered title -->
     <main class="home-main">
         <h1 class="site-title">IE421 Project</h1>
     </main>
 
-    <!-- Team members (bottom-right) -->
     <footer class="team-footer">
         <div class="team-container">
             <span class="team-member">Meryem Öncü</span>
@@ -60,12 +49,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>IE421 Project – Details</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IE421 Project - Project Details</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="details-page">
-    <!-- Top navigation (consistent across pages) -->
     <header class="top-nav">
         <nav class="nav-links">
             <a href="index.html" class="nav-button">Home</a>
@@ -75,32 +63,23 @@
     </header>
 
     <main class="content-main">
-        <!-- Academic, minimal framed sections -->
         <section class="content-section">
             <h2 class="section-title">Project Motivation</h2>
-            <!-- Empty placeholder area for future text insertion -->
-            <!-- Insert project motivation text here. -->
             <div class="section-body"></div>
         </section>
 
         <section class="content-section">
             <h2 class="section-title">Research Questions</h2>
-            <!-- Empty placeholder area for future text insertion -->
-            <!-- Insert research questions here. -->
             <div class="section-body"></div>
         </section>
 
         <section class="content-section">
             <h2 class="section-title">Datasets</h2>
-            <!-- Empty placeholder area for future text insertion -->
-            <!-- Insert dataset descriptions and sources here. -->
             <div class="section-body"></div>
         </section>
 
         <section class="content-section">
             <h2 class="section-title">Methodology</h2>
-            <!-- Empty placeholder area for future text insertion -->
-            <!-- Insert methodology details here. -->
             <div class="section-body"></div>
         </section>
     </main>
@@ -112,12 +91,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>IE421 Project – Visualizations</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IE421 Project - Visualizations</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="visualizations-page">
-    <!-- Top navigation (consistent across pages) -->
     <header class="top-nav">
         <nav class="nav-links">
             <a href="index.html" class="nav-button">Home</a>
@@ -127,37 +105,27 @@
     </header>
 
     <main class="visualizations-main">
-        <!-- Professional dashboard-style layout with large visualization blocks -->
-
         <section class="viz-block">
             <h2 class="viz-title">Daily Rhythm Visualizations</h2>
-            <!-- Empty chart placeholder: insert chart or visualization component here. -->
             <div class="viz-chart-placeholder"></div>
-            <!-- Empty explanation placeholder: insert academic explanation text here. -->
             <div class="viz-text-placeholder"></div>
         </section>
 
         <section class="viz-block">
             <h2 class="viz-title">Transportation &amp; Mobility</h2>
-            <!-- Empty chart placeholder: insert chart or visualization component here. -->
             <div class="viz-chart-placeholder"></div>
-            <!-- Empty explanation placeholder: insert academic explanation text here. -->
             <div class="viz-text-placeholder"></div>
         </section>
 
         <section class="viz-block">
             <h2 class="viz-title">Noise &amp; Social Activity</h2>
-            <!-- Empty chart placeholder: insert chart or visualization component here. -->
             <div class="viz-chart-placeholder"></div>
-            <!-- Empty explanation placeholder: insert academic explanation text here. -->
             <div class="viz-text-placeholder"></div>
         </section>
 
         <section class="viz-block">
             <h2 class="viz-title">Hot &amp; Cold Zones</h2>
-            <!-- Empty chart placeholder: insert chart or visualization component here. -->
             <div class="viz-chart-placeholder"></div>
-            <!-- Empty explanation placeholder: insert academic explanation text here. -->
             <div class="viz-text-placeholder"></div>
         </section>
     </main>
@@ -165,10 +133,6 @@
     <script src="script.js"></script>
 </body>
 </html>
-/* ===========================
-   GLOBAL STYLES
-   =========================== */
-
 :root {
     --bg-black: #000000;
     --navy-frame: #050b1a;
@@ -182,9 +146,7 @@
     --radius-large: 18px;
     --transition-fast: 0.2s ease-out;
     --transition-med: 0.35s ease-out;
-    --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-        sans-serif;
+    --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 *,
@@ -202,12 +164,10 @@ body {
 
 body {
     font-family: var(--font-sans);
-    background-color: var(--bg-black); /* Global pure black background */
+    background-color: var(--bg-black);
     color: var(--text-primary);
     -webkit-font-smoothing: antialiased;
 }
-
-/* Utility */
 
 a {
     color: inherit;
@@ -217,10 +177,6 @@ a {
 main {
     padding: 96px 7vw 72px;
 }
-
-/* ===========================
-   TOP NAVIGATION (SHARED)
-   =========================== */
 
 .top-nav {
     position: fixed;
@@ -249,12 +205,7 @@ main {
     justify-content: center;
     cursor: pointer;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.75);
-    transition:
-        background var(--transition-fast),
-        border-color var(--transition-fast),
-        transform var(--transition-fast),
-        box-shadow var(--transition-fast),
-        color var(--transition-fast);
+    transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast), color var(--transition-fast);
 }
 
 .nav-button:hover {
@@ -271,10 +222,6 @@ main {
     border-color: transparent;
 }
 
-/* ===========================
-   HOME PAGE
-   =========================== */
-
 .home-page {
     position: relative;
     min-height: 100vh;
@@ -282,15 +229,11 @@ main {
     color: #ffffff;
 }
 
-/* Full-screen NYC background image */
-/* To use your own New York City image:
-   1. Save the image into your repository, e.g., at "assets/nyc-home.jpg".
-   2. Update the URL below to point to that file (relative path recommended). */
 .home-page::before {
     content: "";
     position: fixed;
     inset: 0;
-    background-image: url("assets/nyc-home.jpg"); /* <-- Replace with your NYC image path */
+    background-image: url("assets/nyc-home.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -298,7 +241,6 @@ main {
     z-index: -2;
 }
 
-/* Dark overlay for readability over the background image */
 .background-overlay {
     position: fixed;
     inset: 0;
@@ -306,8 +248,6 @@ main {
     mix-blend-mode: multiply;
     z-index: -1;
 }
-
-/* Long Boi animation */
 
 .long-boi-track {
     position: fixed;
@@ -328,7 +268,6 @@ main {
     opacity: 0.96;
 }
 
-/* Smooth, infinite left-to-right horizontal movement */
 @keyframes longBoiWalk {
     0% {
         transform: translateX(-120%);
@@ -337,8 +276,6 @@ main {
         transform: translateX(220%);
     }
 }
-
-/* Centered title */
 
 .home-main {
     position: relative;
@@ -365,8 +302,6 @@ main {
     pointer-events: auto;
 }
 
-/* Team footer */
-
 .team-footer {
     position: fixed;
     right: 32px;
@@ -390,10 +325,6 @@ main {
     color: var(--text-muted);
     white-space: nowrap;
 }
-
-/* ===========================
-   PROJECT DETAILS PAGE
-   =========================== */
 
 .details-page {
     background-color: var(--bg-black);
@@ -422,11 +353,7 @@ main {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(
-        circle at top right,
-        rgba(94, 164, 255, 0.18),
-        transparent 55%
-    );
+    background: radial-gradient(circle at top right, rgba(94, 164, 255, 0.18), transparent 55%);
     opacity: 0;
     transition: opacity var(--transition-med);
     pointer-events: none;
@@ -444,28 +371,19 @@ main {
     color: var(--accent-blue);
 }
 
-/* Empty, editable placeholder area for academic text */
 .section-body {
-    min-height: 100px; /* Adjust as needed; purely for layout */
+    min-height: 100px;
     border-radius: 12px;
     border: 1px dashed rgba(255, 255, 255, 0.2);
     background-color: rgba(4, 7, 18, 0.8);
-    transition:
-        border-color var(--transition-fast),
-        background-color var(--transition-fast),
-        transform var(--transition-fast);
+    transition: border-color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
 }
 
-/* Subtle focus effect when the container is clicked/edited later */
 .content-section:hover .section-body {
     border-color: rgba(245, 196, 107, 0.7);
     background-color: rgba(8, 12, 30, 0.96);
     transform: translateY(-1px);
 }
-
-/* ===========================
-   VISUALIZATIONS PAGE
-   =========================== */
 
 .visualizations-page {
     background-color: var(--bg-black);
@@ -479,8 +397,6 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 24px;
 }
-
-/* Each visualization block */
 
 .viz-block {
     background: radial-gradient(circle at top left, #121b32, var(--navy-surface));
@@ -499,11 +415,7 @@ main {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(
-        circle at bottom,
-        rgba(245, 196, 107, 0.15),
-        transparent 50%
-    );
+    background: radial-gradient(circle at bottom, rgba(245, 196, 107, 0.15), transparent 50%);
     mix-blend-mode: screen;
     opacity: 0;
     transition: opacity var(--transition-med);
@@ -522,25 +434,13 @@ main {
     color: var(--accent-gold);
 }
 
-/* Empty chart placeholder area */
-/* Insert charts or embedded visualizations into this container later. */
 .viz-chart-placeholder {
     flex: 1;
-    min-height: 180px; /* Adjust as needed for chart height */
+    min-height: 180px;
     border-radius: 14px;
     border: 1px dashed rgba(255, 255, 255, 0.35);
-    background: repeating-linear-gradient(
-            135deg,
-            rgba(255, 255, 255, 0.04),
-            rgba(255, 255, 255, 0.04) 10px,
-            rgba(255, 255, 255, 0.02) 10px,
-            rgba(255, 255, 255, 0.02) 20px
-        ),
-        radial-gradient(circle at top left, rgba(94, 164, 255, 0.18), transparent 60%);
-    transition:
-        border-color var(--transition-fast),
-        box-shadow var(--transition-fast),
-        transform var(--transition-fast);
+    background: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.04) 10px, rgba(255, 255, 255, 0.02) 10px, rgba(255, 255, 255, 0.02) 20px), radial-gradient(circle at top left, rgba(94, 164, 255, 0.18), transparent 60%);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
 
 .viz-block:hover .viz-chart-placeholder {
@@ -549,27 +449,19 @@ main {
     transform: translateY(-1px);
 }
 
-/* Empty explanation text placeholder */
-/* Insert academic explanations or interpretation of the chart here. */
 .viz-text-placeholder {
     margin-top: 6px;
     min-height: 70px;
     border-radius: 12px;
     border: 1px dashed rgba(255, 255, 255, 0.22);
     background-color: rgba(4, 7, 18, 0.92);
-    transition:
-        border-color var(--transition-fast),
-        background-color var(--transition-fast);
+    transition: border-color var(--transition-fast), background-color var(--transition-fast);
 }
 
 .viz-block:hover .viz-text-placeholder {
     border-color: rgba(94, 164, 255, 0.85);
     background-color: rgba(8, 12, 30, 0.98);
 }
-
-/* ===========================
-   RESPONSIVE TWEAKS
-   =========================== */
 
 @media (max-width: 768px) {
     .top-nav {
@@ -621,3 +513,5 @@ main {
         grid-template-columns: 1fr;
     }
 }
+// Minimal JavaScript file for future enhancements.
+// The current layout and animations are implemented purely in CSS.
