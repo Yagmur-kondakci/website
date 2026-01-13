@@ -1,50 +1,368 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IE421 Project | Home</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Long Boi - NYC City Rhythm Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            background: #0F2027; /* fallback mavi */
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #0F2027, #203A43, #2C5364);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .nav-btn.active {
+            background: rgba(255,255,255,0.4);
+            font-weight: 600;
+        }
+
+        /* Background */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.7);
+            z-index: 0;
+        }
+
+        /* Home Page */
+        .main-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            text-align: center;
+        }
+
+        .title {
+            color: white;
+            font-size: 56px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .home-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .home-buttons button {
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            transition: 0.3s;
+        }
+
+        .home-buttons button:hover {
+            background: rgba(255,255,255,0.35);
+        }
+
+        /* Developed By */
+        .developed-by {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            color: white;
+            font-size: 14px;
+            z-index: 10;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .developed-by strong {
+            color: rgba(255,255,255,0.9);
+            margin-right: 5px;
+        }
+
+        .team-names span {
+            margin: 0 5px;
+        }
+
+        .team-names span:not(:last-child)::after {
+            content: ", ";
+        }
+
+        /* Pages */
+        .page {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            z-index: 2;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .page-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            padding-top: 100px;
+        }
+
+        .page-header {
+            background: rgba(20,20,20,0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            color: white;
+            font-size: 32px;
+        }
+
+        /* Box */
+        .box {
+            background: rgba(20,20,20,0.85);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            color: #fff;
+        }
+
+        .box h2 {
+            color: #4A90E2;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .box-content p, .box-content li {
+            font-size: 15px;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .box-content ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        /* Visualizations scrollable */
+        .visual-box {
+            background: rgba(20,20,20,0.85);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .visual-box h3 {
+            color: #4A90E2;
+            margin-bottom: 15px;
+        }
+
+        .placeholder {
+            background: rgba(255,255,255,0.05);
+            border: 2px dashed rgba(255,255,255,0.2);
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .placeholder-text {
+            font-style: italic;
+        }
+    </style>
 </head>
-<body class="page page-home">
-  <header class="top-nav">
-    <div class="brand">IE421 Project</div>
-    <nav class="nav-links">
-      <a href="index.html" class="nav-button">Home</a>
-      <a href="project-details.html" class="nav-button">Project Details</a>
-      <a href="visualizations.html" class="nav-button">Visualizations</a>
-    </nav>
-  </header>
-
-  <main class="hero">
-    <!-- Replace the NYC background image URL in style.css at the --nyc-bg variable. -->
-    <div class="hero-overlay">
-      <h1 class="hero-title">IE421 Project</h1>
-      <div class="long-boi-track" aria-label="Animated Long Boi placeholder">
-        <!-- Neutral placeholder SVG for the Long Boi character. Swap with a custom SVG if desired. -->
-        <svg class="long-boi" viewBox="0 0 80 240" role="img" aria-labelledby="longBoiTitle longBoiDesc">
-          <title id="longBoiTitle">Long Boi Placeholder</title>
-          <desc id="longBoiDesc">Neutral placeholder graphic for a tall duck.</desc>
-          <rect x="35" y="60" width="10" height="140" rx="6" fill="#d9e3f5"/>
-          <ellipse cx="40" cy="50" rx="30" ry="40" fill="#f5f7fb"/>
-          <circle cx="30" cy="40" r="4" fill="#0a1a2f"/>
-          <path d="M50 40 Q65 45 50 50" fill="#f5c156"/>
-          <polygon points="36,200 44,200 48,240 32,240" fill="#d9e3f5"/>
-        </svg>
-      </div>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">NYC City Rhythm</div>
+        <div class="nav-buttons">
+            <button class="nav-btn active" onclick="showPage('home')">Home</button>
+            <button class="nav-btn" onclick="showPage('project-details')">Project Details</button>
+            <button class="nav-btn" onclick="showPage('visualizations')">Visualizations</button>
+        </div>
     </div>
-  </main>
 
-  <footer class="team-footer">
-    <div class="team-list" aria-label="Team members">
-      <span class="team-member">Meryem Öncü</span>
-      <span class="team-member">Ahmed Efe Koluaçık</span>
-      <span class="team-member">Beyza Altınköprü</span>
-      <span class="team-member">Yağmur Kondakcı</span>
-      <span class="team-member">Öykü Akdoğan</span>
+    <!-- Background -->
+    <div class="background"></div>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <div class="main-container">
+            <h1 class="title">New York City's Life Rhythms</h1>
+            <div class="home-buttons">
+                <button onclick="showPage('project-details')">Project Details</button>
+                <button onclick="showPage('visualizations')">Visualizations</button>
+            </div>
+        </div>
+        <div class="developed-by">
+            <strong>Developed by:</strong>
+            <span class="team-names">
+                <span>Meryem Öncü</span>
+                <span>Ahmed Efe Koluaçık</span>
+                <span>Beyza Altınköprü</span>
+                <span>Yağmur Kondakcı</span>
+                <span>Öykü Akdoğan</span>
+            </span>
+        </div>
     </div>
-  </footer>
 
-  <script src="script.js"></script>
+    <!-- Project Details Page -->
+    <div id="project-details" class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <h1>Project Details</h1>
+            </div>
+
+            <div class="box">
+                <h2>Project Motivation</h2>
+                <div class="box-content">
+                    <p>This project aims to uncover the hidden daily rhythms of NYC, analyzing urban mobility, activity zones, and environmental factors to understand the city's "breathing pattern".</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <h2>Research Questions</h2>
+                <div class="box-content">
+                    <ul>
+                        <li>How do daily rhythms manifest in urban transportation patterns?</li>
+                        <li>What are the key factors influencing mobility and movement in NYC?</li>
+                        <li>How do noise levels and events correlate with urban activity zones?</li>
+                        <li>Can we identify distinct hot and cold zones based on activity patterns?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="developed-by">
+                <strong>Developed by:</strong>
+                <span class="team-names">
+                    <span>Meryem Öncü</span>
+                    <span>Ahmed Efe Koluaçık</span>
+                    <span>Beyza Altınköprü</span>
+                    <span>Yağmur Kondakcı</span>
+                    <span>Öykü Akdoğan</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Visualizations Page -->
+    <div id="visualizations" class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <h1>Visualizations</h1>
+            </div>
+
+            <div class="visual-box">
+                <h3>Q1 - City Breathing Rhythm</h3>
+                <div class="placeholder"><span class="placeholder-text">Graph placeholder</span></div>
+                <div class="placeholder"><span class="placeholder-text">Explanation placeholder</span></div>
+            </div>
+
+            <div class="visual-box">
+                <h3>Q2 - Secondary Factors Analysis</h3>
+                <div class="placeholder"><span class="placeholder-text">Graph placeholder</span></div>
+                <div class="placeholder"><span class="placeholder-text">Explanation placeholder</span></div>
+            </div>
+
+            <div class="visual-box">
+                <h3>Q3 - Hot & Cold Zones</h3>
+                <div class="placeholder"><span class="placeholder-text">Graph placeholder</span></div>
+                <div class="placeholder"><span class="placeholder-text">Explanation placeholder</span></div>
+            </div>
+
+            <div class="developed-by">
+                <strong>Developed by:</strong>
+                <span class="team-names">
+                    <span>Meryem Öncü</span>
+                    <span>Ahmed Efe Koluaçık</span>
+                    <span>Beyza Altınköprü</span>
+                    <span>Yağmur Kondakcı</span>
+                    <span>Öykü Akdoğan</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            const navMap = { 'home':0, 'project-details':1, 'visualizations':2 };
+            const navButtons = document.querySelectorAll('.nav-btn');
+            if(navMap[pageId]!==undefined) navButtons[navMap[pageId]].classList.add('active');
+        }
+    </script>
 </body>
 </html>
+
