@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IE421 Project - City's Life Rhythm</title>
+    <title>Long Boi - NYC City Rhythm Project</title>
     <style>
         * {
             margin: 0;
@@ -13,362 +13,482 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #000;
-            color: #fff;
-            overflow-x: hidden;
-        }
-
-        /* Navigation Buttons */
-        .nav-buttons {
-            position: fixed;
-            top: 24px;
-            right: 24px;
-            display: flex;
-            gap: 16px;
-            z-index: 1000;
-        }
-
-        .nav-button {
-            padding: 12px 24px;
-            background-color: #1a2332;
-            color: #fff;
-            border: 1px solid #2a3f5f;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 300;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .nav-button:hover {
-            background-color: #2a3f5f;
-            transform: translateY(-2px);
-        }
-
-        /* Home Page Styles */
-        .home-container {
-            position: relative;
-            width: 100vw;
             height: 100vh;
             overflow: hidden;
+            position: relative;
         }
 
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(138, 43, 226, 0.95);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .nav-btn.active {
+            background: rgba(255, 255, 255, 0.4);
+            font-weight: 600;
+        }
+
+        /* Background Image */
         .background {
             position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, #ff9a56 0%, #ffc078 50%, #ffd89b 100%);
-        }
-
-        .background::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.3);
-        }
-
-        /* City Skyline */
-        .skyline {
-            position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
-            right: 0;
-            height: 60%;
-            background: linear-gradient(to top, #1a1a1a 0%, transparent 100%);
-        }
-nyc .jpeg
-        .building {
-            position: absolute;
-            bottom: 0;
-            background: #222;
-            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.7);
+            z-index: 0;
         }
 
-        .building:nth-child(1) { left: 5%; width: 80px; height: 400px; background: #1a1a1a; }
-        .building:nth-child(2) { left: 12%; width: 100px; height: 450px; background: #222; }
-        .building:nth-child(3) { left: 20%; width: 70px; height: 350px; background: #2a2a2a; }
-        .building:nth-child(4) { left: 28%; width: 120px; height: 500px; background: #1a1a1a; }
-        .building:nth-child(5) { left: 38%; width: 90px; height: 420px; background: #222; }
-        .building:nth-child(6) { left: 65%; width: 100px; height: 450px; background: #1a1a1a; }
-        .building:nth-child(7) { left: 73%; width: 130px; height: 500px; background: #222; }
-        .building:nth-child(8) { left: 83%; width: 95px; height: 400px; background: #2a2a2a; }
-        .building:nth-child(9) { left: 90%; width: 85px; height: 350px; background: #222; }
-
-        .main-title {
+        /* Main Container */
+        .main-container {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 7rem;
-            font-weight: 300;
-            letter-spacing: 0.5rem;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            z-index: 10;
+            z-index: 1;
+            text-align: center;
+            margin-top: 40px;
         }
 
-        .team-members {
+        .title {
+            color: white;
+            font-size: 56px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Developed By - Bottom Right */
+        .developed-by {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            color: white;
+            font-size: 14px;
+            z-index: 10;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .developed-by strong {
+            color: rgba(255, 255, 255, 0.9);
+            margin-right: 5px;
+        }
+
+        .team-names {
+            display: inline;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .team-names span {
+            margin: 0 5px;
+        }
+
+        .team-names span:not(:last-child)::after {
+            content: ", ";
+        }
+
+        /* Page Styles */
+        .page {
+            display: none;
             position: absolute;
-            bottom: 32px;
-            right: 32px;
-            display: flex;
-            gap: 24px;
-            z-index: 10;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.3);
         }
 
-        .team-member {
-            font-size: 13px;
-            font-weight: 300;
-            letter-spacing: 1px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        .page.active {
+            display: block;
         }
 
-        /* Content Pages Styles */
-        .content-page {
-            min-height: 100vh;
-            padding: 48px;
+        #home-page {
+            overflow: hidden;
         }
 
-        .page-container {
+        .page-content {
             max-width: 1200px;
             margin: 0 auto;
-            margin-top: 96px;
+            padding: 40px 20px;
+            padding-top: 100px;
         }
 
-        .page-title {
-            font-size: 3rem;
-            font-weight: 300;
-            letter-spacing: 0.3rem;
-            margin-bottom: 64px;
+        .page-header {
+            background: rgba(60, 60, 60, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
             text-align: center;
         }
 
-        .section {
-            background-color: #1a2332;
-            border: 1px solid #2a3f5f;
-            padding: 32px;
-            margin-bottom: 32px;
-            min-height: 200px;
+        .page-header h1 {
+            color: white;
+            font-size: 32px;
         }
 
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: 300;
-            letter-spacing: 0.2rem;
-            margin-bottom: 16px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid #2a3f5f;
+        /* Box Styles */
+        .box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
         }
 
-        .section-content {
-            color: #999;
+        .box {
+            background: rgba(60, 60, 60, 0.95);
+            padding: 25px;
+            border-radius: 10px;
+            min-height: 300px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .box h2 {
+            color: #4A90E2;
+            font-size: 22px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(74, 144, 226, 0.3);
+        }
+
+        .box h3 {
+            color: white;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .box-content {
+            color: rgba(255, 255, 255, 0.8);
             font-size: 14px;
-            font-style: italic;
-            line-height: 1.8;
+            line-height: 1.6;
         }
 
-        /* Visualization Specific Styles */
-        .viz-container {
-            max-width: 1400px;
-        }
-
-        .viz-block {
-            background-color: #1a2332;
-            border: 1px solid #2a3f5f;
-            padding: 32px;
-            margin-bottom: 48px;
-        }
-
-        .viz-title {
-            font-size: 1.5rem;
-            font-weight: 300;
-            letter-spacing: 0.2rem;
-            margin-bottom: 24px;
-        }
-
-        .chart-placeholder {
-            background-color: #000;
-            border: 1px solid #2a3f5f;
-            height: 400px;
+        .placeholder {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px dashed rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            padding: 40px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 15px;
+            min-height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 24px;
         }
 
-        .chart-info {
-            color: #666;
-            font-size: 16px;
-        }
-
-        .explanation-area {
-            color: #999;
-            min-height: 100px;
-            font-size: 14px;
+        .placeholder-text {
             font-style: italic;
-            line-height: 1.8;
         }
 
-        @media (max-width: 768px) {
-            .main-title {
-                font-size: 3rem;
-            }
-            .team-members {
-                flex-direction: column;
-                gap: 12px;
-            }
-            .nav-buttons {
-                flex-direction: column;
-                gap: 8px;
-            }
+        .dataset-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .dataset-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .dataset-list li:last-child {
+            border-bottom: none;
+        }
+
+        .dataset-list a {
+            color: #4A90E2;
+            text-decoration: none;
+        }
+
+        .dataset-list a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <!-- HOME PAGE -->
-    <div id="homePage" class="home-container">
-        <div class="background">
-            <div class="skyline">
-                <div class="building"></div>
-                <div class="building"></div>
-                <div class="building"></div>
-                <div class="building"></div>
-                <div class="building"></div>
-                <div class="building"></div>
-                <div class="building"></div>
-                <div class="building"></div>
-                <div class="building"></div>
-            </div>
-        </div>
-
-        <h1 class="main-title">City's Life Rhythm</h1>
-
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">NYC City Rhythm</div>
         <div class="nav-buttons">
-            <button class="nav-button" onclick="showPage('details')">Project Details</button>
-            <button class="nav-button" onclick="showPage('visualizations')">Visualizations</button>
-        </div>
-
-        <div class="team-members">
-            <div class="team-member">Meryem Öncü</div>
-            <div class="team-member">Ahmed Efe Koluaçık</div>
-            <div class="team-member">Beyza Altınköprü</div>
-            <div class="team-member">Yağmur Kondakcı</div>
-            <div class="team-member">Öykü Akdoğan</div>
+            <button class="nav-btn active" onclick="showPage('home-page')">Home</button>
+            <button class="nav-btn" onclick="showPage('project-details')">Project Details</button>
+            <button class="nav-btn" onclick="showPage('visualizations')">Visualizations</button>
         </div>
     </div>
 
-    <!-- PROJECT DETAILS PAGE -->
-    <div id="detailsPage" class="content-page" style="display: none;">
-        <div class="nav-buttons">
-            <button class="nav-button" onclick="showPage('home')">Home</button>
-            <button class="nav-button" onclick="showPage('details')">Project Details</button>
-            <button class="nav-button" onclick="showPage('visualizations')">Visualizations</button>
+    <!-- Background -->
+    <div class="background"></div>
+
+    <!-- Home Page -->
+    <div id="home-page" class="page active">
+        <div class="main-container">
+            <h1 class="title">New York City's Life Rhythms</h1>
         </div>
 
-        <div class="page-container">
-            <h1 class="page-title">Project Details</h1>
+        <!-- Developed By -->
+        <div class="developed-by">
+            <strong>Developed by:</strong>
+            <span class="team-names">
+                <span>Meryem Öncü</span>
+                <span>Ahmed Efe Koluaçık</span>
+                <span>Beyza Altınköprü</span>
+                <span>Yağmur Kondakcı</span>
+                <span>Öykü Akdoğan</span>
+            </span>
+        </div>
+    </div>
 
-            <div class="section">
-                <h2 class="section-title">Project Motivation</h2>
-                <div class="section-content">
-                    <!-- EMPTY - Add your project motivation text here -->
+    <!-- Project Details Page -->
+    <div id="project-details" class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <h1>Project Details</h1>
+            </div>
+
+            <!-- Team Details Box -->
+            <div class="box">
+                <h2>Team Details</h2>
+                <div class="box-content">
+                    <p><strong>Team Name:</strong> Long Boi</p>
+                    <p><strong>GitHub:</strong> <a href="https://github.com/BILGI-IE-421/ie421-2025-2026-1-termprojectlong_boi" style="color: #4A90E2;">ie421-2025-2026-1-termprojectlong_boi</a></p>
+                    <div class="placeholder">
+                        <span class="placeholder-text">Team member details placeholder</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="section">
-                <h2 class="section-title">Research Questions</h2>
-                <div class="section-content">
-                    <!-- EMPTY - Add your research questions here -->
+            <!-- Research Questions -->
+            <div class="box-container">
+                <div class="box">
+                    <h2>Research Question 1</h2>
+                    <div class="box-content">
+                        <h3>Does a city have a "breathing rhythm"?</h3>
+                        <p>In this project, we investigate whether NYC exhibits a measurable daily "rhythm" similar to a biological organism...</p>
+                        <div class="placeholder">
+                            <span class="placeholder-text">Q1 Explanation & Analysis placeholder</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h2>Research Question 2</h2>
+                    <div class="box-content">
+                        <h3>How do secondary factors align with NYC's daily activity cycle?</h3>
+                        <p>Building on the core analysis from Question 1, we examine how secondary factors, including noise pollution, social events, and traffic congestion, relate to NYC's main daily activity cycle...</p>
+                        <div class="placeholder">
+                            <span class="placeholder-text">Q2 Explanation & Analysis placeholder</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h2>Research Question 3</h2>
+                    <div class="box-content">
+                        <h3>Do cities contain hidden "hot" and "cold" zones?</h3>
+                        <p>Cities naturally develop zones that people are unconsciously attracted to "hot spots" or avoid "cold spots"...</p>
+                        <div class="placeholder">
+                            <span class="placeholder-text">Q3 Explanation & Analysis placeholder</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="section">
-                <h2 class="section-title">Datasets</h2>
-                <div class="section-content">
-                    <!-- EMPTY - Add your datasets information here -->
+            <!-- Datasets -->
+            <div class="box-container">
+                <div class="box">
+                    <h2>Datasets - Q1</h2>
+                    <div class="box-content">
+                        <ul class="dataset-list">
+                            <li>• Electricity Consumption</li>
+                            <li>• Public Transit (MTA Subway)</li>
+                            <li>• Traffic Density</li>
+                            <li>• Pedestrian Mobility</li>
+                            <li>• Citibike Trip Data</li>
+                        </ul>
+                        <div class="placeholder">
+                            <span class="placeholder-text">Q1 Dataset details placeholder</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h2>Datasets - Q2</h2>
+                    <div class="box-content">
+                        <ul class="dataset-list">
+                            <li>• Traffic Density (re-used)</li>
+                            <li>• Noise Pollution (311 Complaints)</li>
+                            <li>• Social Events (Permitted Events)</li>
+                        </ul>
+                        <div class="placeholder">
+                            <span class="placeholder-text">Q2 Dataset details placeholder</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h2>Datasets - Q3</h2>
+                    <div class="box-content">
+                        <ul class="dataset-list">
+                            <li>• Air Quality</li>
+                            <li>• Noise Levels (311 Complaints)</li>
+                            <li>• Green Space Availability</li>
+                            <li>• Pedestrian Mobility (re-used)</li>
+                            <li>• Activity Intensity (Social Events)</li>
+                        </ul>
+                        <div class="placeholder">
+                            <span class="placeholder-text">Q3 Dataset details placeholder</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="section">
-                <h2 class="section-title">Methodology</h2>
-                <div class="section-content">
-                    <!-- EMPTY - Add your methodology description here -->
-                </div>
+            <!-- Developed By -->
+            <div class="developed-by">
+                <strong>Developed by:</strong>
+                <span class="team-names">
+                    <span>Meryem Öncü</span>
+                    <span>Ahmed Efe Koluaçık</span>
+                    <span>Beyza Altınköprü</span>
+                    <span>Yağmur Kondakcı</span>
+                    <span>Öykü Akdoğan</span>
+                </span>
             </div>
         </div>
     </div>
 
-    <!-- VISUALIZATIONS PAGE -->
-    <div id="visualizationsPage" class="content-page" style="display: none;">
-        <div class="nav-buttons">
-            <button class="nav-button" onclick="showPage('home')">Home</button>
-            <button class="nav-button" onclick="showPage('details')">Project Details</button>
-            <button class="nav-button" onclick="showPage('visualizations')">Visualizations</button>
-        </div>
+    <!-- Visualizations Page -->
+    <div id="visualizations" class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <h1>Visualizations</h1>
+            </div>
 
-        <div class="page-container viz-container">
-            <h1 class="page-title">Visualizations</h1>
-
-            <!-- Daily Rhythm Visualizations -->
-            <div class="viz-block">
-                <h2 class="viz-title">Daily Rhythm Visualizations</h2>
-                <div class="chart-placeholder" id="chart1">
-                    <p class="chart-info"><!-- INSERT CHART HERE --></p>
+            <div class="box-container">
+                <div class="box">
+                    <h2>Q1 Visualizations</h2>
+                    <div class="box-content">
+                        <h3>City Breathing Rhythm</h3>
+                        <div class="placeholder">
+                            <span class="placeholder-text">Graph placeholder for Q1 visualizations</span>
+                        </div>
+                        <div class="placeholder" style="margin-top: 15px;">
+                            <span class="placeholder-text">Explanation placeholder for Q1</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="explanation-area">
-                    <!-- EMPTY - Add chart explanation here -->
+
+                <div class="box">
+                    <h2>Q2 Visualizations</h2>
+                    <div class="box-content">
+                        <h3>Secondary Factors Analysis</h3>
+                        <div class="placeholder">
+                            <span class="placeholder-text">Graph placeholder for Q2 visualizations</span>
+                        </div>
+                        <div class="placeholder" style="margin-top: 15px;">
+                            <span class="placeholder-text">Explanation placeholder for Q2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h2>Q3 Visualizations</h2>
+                    <div class="box-content">
+                        <h3>Hot & Cold Zones</h3>
+                        <div class="placeholder">
+                            <span class="placeholder-text">Graph placeholder for Q3 visualizations</span>
+                        </div>
+                        <div class="placeholder" style="margin-top: 15px;">
+                            <span class="placeholder-text">Explanation placeholder for Q3</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Transportation & Mobility -->
-            <div class="viz-block">
-                <h2 class="viz-title">Transportation & Mobility</h2>
-                <div class="chart-placeholder" id="chart2">
-                    <p class="chart-info"><!-- INSERT CHART HERE --></p>
-                </div>
-                <div class="explanation-area">
-                    <!-- EMPTY - Add chart explanation here -->
-                </div>
-            </div>
-
-            <!-- Noise & Social Activity -->
-            <div class="viz-block">
-                <h2 class="viz-title">Noise & Social Activity</h2>
-                <div class="chart-placeholder" id="chart3">
-                    <p class="chart-info"><!-- INSERT CHART HERE --></p>
-                </div>
-                <div class="explanation-area">
-                    <!-- EMPTY - Add chart explanation here -->
-                </div>
-            </div>
-
-            <!-- Hot & Cold Zones -->
-            <div class="viz-block">
-                <h2 class="viz-title">Hot & Cold Zones</h2>
-                <div class="chart-placeholder" id="chart4">
-                    <p class="chart-info"><!-- INSERT CHART HERE --></p>
-                </div>
-                <div class="explanation-area">
-                    <!-- EMPTY - Add chart explanation here -->
-                </div>
+            <!-- Developed By -->
+            <div class="developed-by">
+                <strong>Developed by:</strong>
+                <span class="team-names">
+                    <span>Meryem Öncü</span>
+                    <span>Ahmed Efe Koluaçık</span>
+                    <span>Beyza Altınköprü</span>
+                    <span>Yağmur Kondakcı</span>
+                    <span>Öykü Akdoğan</span>
+                </span>
             </div>
         </div>
     </div>
 
     <script>
-        // Page Navigation
-        function showPage(pageName) {
+        function showPage(pageId) {
             // Hide all pages
-            document.getElementById('homePage').style.display = 'none';
-            document.getElementById('detailsPage').style.display = 'none';
-            document.getElementById('visualizationsPage').style.display = 'none';
-
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
             // Show selected page
-            if (pageName === 'home') {
-                document.getElementById('homePage').style.display = 'block';
-            } else if (pageName === 'details') {
-                document.getElementById('detailsPage').style.display = 'block';
-            } else if (pageName === 'visualizations') {
-                document.getElementById('visualizationsPage').style.display = 'block';
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update navigation buttons active state
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Set active button based on page
+            const navMap = {
+                'home-page': 0,
+                'project-details': 1,
+                'visualizations': 2
+            };
+            
+            const navButtons = document.querySelectorAll('.nav-btn');
+            if (navMap[pageId] !== undefined) {
+                navButtons[navMap[pageId]].classList.add('active');
             }
         }
+    </script>
+</body>
+</html>
+
